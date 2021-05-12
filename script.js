@@ -26,6 +26,9 @@ function dateHandler() {
     // Calculate julian date from UNIX time
     let julian_target = target.getTime() / milliseconds_in_day + 2440587.5;
 
+    // Move time to 12:00
+    julian_target += 0.5;
+
     // Calculate time passed since chosen new moon
     let time_from_last_new = julian_target - epoch;
     let moon_day = time_from_last_new % average_moon_month;
